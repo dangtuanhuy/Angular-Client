@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Player } from '../player';
+import { PlayerService } from '../player.service';
+import { ClassGetter } from '@angular/compiler/src/output/output_ast';
 @Component({
   selector: 'app-player',
   templateUrl: './player.component.html',
@@ -7,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlayerComponent implements OnInit {
 
-  constructor() { }
+  [x: string]: any;
 
-  ngOnInit() {
+  players: Player[];
+  rows = [];
+  constructor(private playerService: PlayerService) { }
+
+  ngOnInit(): void {
+    this.rows = this.players;
   }
-
+  getPlayers() {
+    return this.playerService.getPlayers()
+      .subscribe(
+        players => {
+          this.players = players;
+          this.rows = players;
+          console.log(this.rows);
+        }
+      );
+  }
 }
