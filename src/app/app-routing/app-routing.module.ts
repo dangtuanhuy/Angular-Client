@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { PlayerComponent } from '../player/player.component';
 import { PlayerDetailsComponent } from '../player-details/player-details.component';
 import { AddPlayerComponent } from '../add-player/add-player.component';
-import { Route } from '@angular/compiler/src/core';
+
 
 const routes: Routes = [
   {
@@ -31,5 +31,4 @@ const routes: Routes = [
 })
 
 export class AppRoutingModule {
-  constructor(router: Route) { }
 }

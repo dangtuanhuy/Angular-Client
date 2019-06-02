@@ -2,13 +2,13 @@
 <div class="text-center">Add Player</div>
 <div [hidden]="submitted">
 
-  <form #addCustomerForm="ngForm">
+  <form #addPlayerForm="ngForm">
 
     <div class="form-group">
       <label for="nationality">Nationality</label>
       <input type="text" class="form-control" id="nationality" placeholder="Fill Nationality" required
-        [(ngModel)]="player.nationality" name="nationality" #firstname="ngModel">
-      <div [hidden]="nationality.valid || nationality.pristine" class="alert alert-danger">
+        [(ngModel)]="player.nationality" name="nationality" #nationality="ngModel">
+        <div [hidden]="nationality.valid || nationality.pristine" class="alert alert-danger">
         Nationality is required
       </div>
     </div>
@@ -47,9 +47,9 @@
 </div>
 
 <div [hidden]="!submitted">
-  <p>Submitted Successfully! -> <span class="badge badge-light">{{customer.firstname}} {{customer.lastname}}</span></p>
+  <p>Submitted Successfully! -> <span class="badge badge-light">{{player.firstname}} {{player.lastname}}</span></p>
   <div class="btn-group btn-group-sm">
     <button type="button" class="btn btn-dark" (click)="goBack()">Back</button>
-    <button type="button" class="btn btn-dark" (click)="newCustomer(); addCustomerForm.reset()">Continue</button>
+    <button type="button" class="btn btn-dark" (click)="newCustomer(); addPlayerForm.reset()">Continue</button>
   </div>
 </div>
