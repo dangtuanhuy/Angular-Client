@@ -15,7 +15,7 @@ const routes: Routes = [
     component: AddPlayerComponent
   },
   {
-    path: ' ',
+    path: 'players/:id ',
     component: PlayerDetailsComponent
   },
   {
